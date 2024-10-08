@@ -18,6 +18,10 @@ git clone https://github.com/KimleangSama/omz-llm.git ~/.omz-llm
 echo "source ~/.omz-llm/omz-llm.plugin.zsh" >> ~/.zshrc
 ```
 
+## Uninstallation
+
+Use `nano` or `vim` on `~/.zshrc` file to locate `source ~/.omz-llm/omz-llm.plugin.zsh` statement, delete that statement and refresh shell.
+
 ### Configuration
 
 You need to have an OPENAI API key with access to `gpt-4` to use this plugin. Expose this via the `OPENAI_API_KEY` environment variable:
