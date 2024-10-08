@@ -10,6 +10,10 @@
 (( ! ${+OMZ_LLM_DEBUG} )) &&
     typeset -g OMZ_LLM_DEBUG=false
 
+# New option to select ollama model
+(( ! ${+OMZ_LLM_OLLAMA_MODEL} )) &&
+    typeset -g OMZ_LLM_OLLAMA_MODEL="llama:3.2"
+
 read -r -d '' SYSTEM_PROMPT <<- EOM
   You will be given the raw input of a shell command. 
   Your task is to either complete the command or provide a new command that you think the user is trying to type. 
@@ -57,7 +61,7 @@ function _suggest_ai() {
 
     local data=$(echo "$PROMPT $input")
 
-    local response=$(echo "$data" | ollama run llama3.1)
+    local response=$(echo "$data" | ollama run "$OMZ_LLM_OLLAMA_MODEL")
 
     local message=$(echo "$response" | jq -r '.response')
 
