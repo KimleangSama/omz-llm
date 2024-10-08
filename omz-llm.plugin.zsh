@@ -12,7 +12,7 @@
 
 # New option to select ollama model
 (( ! ${+OMZ_LLM_OLLAMA_MODEL} )) &&
-    typeset -g OMZ_LLM_OLLAMA_MODEL="llama:3.2"
+    typeset -g OMZ_LLM_OLLAMA_MODEL="llama3.2"
 
 read -r -d '' SYSTEM_PROMPT <<- EOM
   You will be given the raw input of a shell command. 
@@ -88,6 +88,7 @@ function omz-llm() {
     echo ""
     echo "Configurations:"
     echo "    - OMZ_LLM_KEY: Key to press to get suggestions (default: ^z, value: $OMZ_LLM_KEY)."
+    echo "    - OMZ_LLM_OLLAMA_MODEL: Model from ollama model (default: llama3.2)."
     echo "    - OMZ_LLM_SEND_CONTEXT: If \`true\`, zsh-copilot will send context information (whoami, shell, pwd, etc.) to the AI model (default: true, value: $OMZ_LLM_SEND_CONTEXT)."
 }
 
