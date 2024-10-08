@@ -79,8 +79,8 @@ function _suggest_ai() {
     fi
 }
 
-function zsh-copilot() {
-    echo "ZSH Copilot is now active. Press $OMZ_LLM_KEY to get suggestions."
+function omz-llm() {
+    echo "OMZ LLM is now active. Press $OMZ_LLM_KEY to get suggestions."
     echo ""
     echo "Configurations:"
     echo "    - OMZ_LLM_KEY: Key to press to get suggestions (default: ^z, value: $OMZ_LLM_KEY)."
